@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="mr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ज्ञानेश्वरी कलेक्शन — पुरुषांचे कपडे</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');
+
+    :root {
+      --orange: #e67e22;
+      --gold: #d4af37;
+      --green: #2ecc71;
+      --black: #111;
+      --white: #ffffff;
+      --muted: #6b6b6b;
+      --bg: #fffefb;
+      --card: #ffffff;
+    }
+
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans Devanagari', Arial, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--black);
+    }
+
+    header {
+      background: var(--white);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      border-bottom: 4px solid var(--gold);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--orange);
+      box-shadow: 0 0 12px rgba(212,175,55,0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .logo:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 18px rgba(46,204,113,0.6);
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--black);
+      font-weight: 700;
+      border: 2px solid var(--gold);
+      border-radius: 8px;
+      padding: 6px 14px;
+      background: #fffaf0;
+      transition: all 0.3s ease;
+    }
+    nav a:hover {
+      background: var(--orange);
+      color: var(--white);
+      border-color: var(--green);
+      transform: translateY(-3px);
+      box-shadow: 0 0 10px rgba(230,126,34,0.5);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #fffbe6, #fff9f2);
+      padding: 70px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .hero-left { max-width: 600px; }
+    h1 {
+      font-size: 38px;
+      margin: 0 0 10px;
+      color: var(--orange);
+      text-shadow: 1px 1px 3px rgba(212,175,55,0.6);
+    }
+    p.lead {
+      font-size: 18px;
+      color: var(--black);
+      margin-bottom: 20px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      padding: 12px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(230,126,34,0.4);
+      transition: all 0.3s ease;
+      border: 2px solid var(--gold);
+    }
+    .cta:hover {
+      background: var(--green);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(46,204,113,0.5);
+    }
+
+    #products { padding: 50px 24px; }
+    h2 {
+      color: var(--orange);
+      margin-bottom: 18px;
+      border-left: 5px solid var(--gold);
+      padding-left: 10px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 16px;
+      border-top: 5px solid var(--orange);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 24px rgba(212,175,55,0.4);
+    }
+    .product-img {
+      height: 180px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #ffd580, #fff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--orange);
+      font-size: 20px;
+    }
+
+    #about {
+      padding: 50px 24px;
+      background: #fffdf7;
+      border-top: 2px solid var(--gold);
+    }
+    #about p { max-width: 700px; line-height: 1.6; }
+
+    footer {
+      background: var(--white);
+      padding: 30px 24px;
+      border-top: 4px solid var(--gold);
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+    }
+
+    footer h3 {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--black);
+      margin-bottom: 12px;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 10px;
+    }
+    .contact-info {
+      flex: 1;
+      min-width: 260px;
+      font-weight: bold;
+      color: var(--black);
+      font-size: 15px;
+      line-height: 1.6;
+      border-left: 4px solid var(--green);
+      padding-left: 10px;
+    }
+
+    form {
+      flex: 1;
+      min-width: 260px;
+      background: #fffaf3;
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(230,126,34,0.1);
+      border: 2px solid var(--gold);
+    }
+
+    label { font-size: 14px; color: var(--muted); margin-top: 8px; display: block; }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+      transition: border 0.2s;
+      font-family: inherit;
+    }
+    input:focus, textarea:focus {
+      border-color: var(--green);
+      outline: none;
+      box-shadow: 0 0 6px rgba(46,204,113,0.4);
+    }
+    button {
+      background: var(--orange);
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: 2px solid var(--gold);
+    }
+    button:hover {
+      background: var(--green);
+      transform: scale(1.05);
+    }
+
+    footer .small {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 16px;
+      border-top: 1px solid #eee;
+      padding-top: 8px;
+    }
+
+    @media(max-width: 720px) {
+      h1 { font-size: 28px; }
+      .hero { text-align: center; padding: 40px 16px; }
+      nav { flex-wrap: wrap; gap: 10px; justify-content: center; }
+      .contact { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="logo.jpg" alt="ज्ञानेश्वरी कलेक्शन लोगो" class="logo">
+      <div>
+        <div style="font-weight:800;font-size:18px;color:var(--gold)">ज्ञानेश्वरी कलेक्शन</div>
+        <div style="font-size:12px;color:var(--black)">पुरुषांसाठी फॅशन</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#products">कलेक्शन</a>
+      <a href="#about">आमच्या बद्दल</a>
+      <a href="#contact">संपर्क</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-left">
+      <h1>आधुनिक पुरुषांसाठी स्टायलिश कपडे</h1>
+      <p class="lead">ज्ञानेश्वरी कलेक्शन — शर्ट, पँट, कुर्ते, हूडीज आणि स्पोर्ट्स वेअर. दर्जा, आत्मविश्वास आणि शैलीचा संगम.</p>
+      <a class="cta" href="#products">कलेक्शन पहा</a>
+    </div>
+  </section>
+
+  <main>
+    <section id="products">
+      <h2>पुरुषांचे कलेक्शन</h2>
+      <div class="grid">
+        <article class="card"><div class="product-img">शर्ट</div><strong>कॅज्युअल शर्ट</strong><p class="small">आरामदायी, आकर्षक आणि दैनंदिन वापरासाठी योग्य.</p></article>
+        <article class="card"><div class="product-img">पँट</div><strong>फॉर्मल / जीन्स</strong><p class="small">दर्जेदार फॅब्रिक आणि आधुनिक फिट.</p></article>
+        <article class="card"><div class="product-img">कुर्ते</div><strong>पारंपरिक कुर्ते</strong><p class="small">उत्सव आणि खास प्रसंगांसाठी आकर्षक डिझाईन्स.</p></article>
+        <article class="card"><div class="product-img">हूडीज</div><strong>हूडीज</strong><p class="small">थंड हवामानासाठी आरामदायी आणि स्टायलिश हूडीज.</p></article>
+        <article class="card"><div class="product-img">स्पोर्ट्स वेअर</div><strong>स्पोर्ट्स वेअर</strong><p class="small">आरामदायी, फिट आणि स्पोर्टी लुकसाठी उत्तम पर्याय.</p></article>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>आमच्या बद्दल</h2>
+      <p>ज्ञानेश्वरी कलेक्शन हे पुरुषांसाठी दर्जेदार, आकर्षक आणि स्टायलिश कपड्यांचे एक विश्वासार्ह ठिकाण आहे.
+इथे तुम्हाला पारंपरिक पोशाखांपासून ते आधुनिक फॅशनपर्यंत सर्व काही एका छताखाली मिळेल — मग तो सण, समारंभ, ऑफिस लुक किंवा कॅज्युअल आउटिंग असो.
+
+आमच्याकडे उपलब्ध असलेले प्रत्येक कपडे उच्च दर्जाच्या कापडापासून तयार केलेले आहेत, ज्यामुळे तुम्हाला आरामदायी अनुभव मिळतो आणि तुमचा व्यक्तिमत्त्व अधिक उठून दिसतो.
+फॅशन ही केवळ बाह्य गोष्ट नसून ती आत्मविश्वासाची ओळख आहे — आणि हाच आत्मविश्वास आमचं मुख्य ध्येय आहे.
+
+ज्ञानेश्वरी कलेक्शनमध्ये आम्ही “फॅशनमध्ये आत्मविश्वास निर्माण करणे” या उद्देशाने प्रत्येक ग्राहकाला त्याच्या व्यक्तिमत्त्वाला साजेशी शैली देण्याचा प्रयत्न करतो.
+तुमची शैली, तुमची ओळख — आणि त्या ओळखीला अधिक आकर्षक बनवणारा साथीदार म्हणजे ज्ञानेश्वरी कलेक्शन.</p>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <h3>संपर्क करा</h3>
+    <div class="contact">
+      <div class="contact-info">
+        📍 पत्ता: ज्ञानेश्वरी कलेक्शन,<br>
+राजगुरुनगर सहकारी बँकेजवळ, पाईट, खेड, पुणे.<br>
+        📞 मोबाईल: +91 91465 65099<br>
+        ✉️ ईमेल: <b>dnyaneshwaricollectionpait@gmail.com</b>
+      </div>
+
+      <form action="https://formcarry.com/s/lw938RQKVnk" method="POST" accept-charset="UTF-8">
+        <label for="name">नाव</label>
+        <input id="name" name="name" placeholder="तुमचे नाव" required />
+
+        <label for="email">ईमेल / फोन</label>
+        <input id="email" name="email" placeholder="ईमेल किंवा फोन" required />
+
+        <label for="message">संदेश</label>
+        <textarea id="message" name="message" rows="4" placeholder="आपला संदेश येथे टाका" required></textarea>
+
+        <button type="submit">पठवा</button>
+      </form>
+    </div>
+    <div class="small">© २०२५ ज्ञानेश्वरी कलेक्शन — सर्व हक्क राखीव</div>
+  </footer>
+</body>
+</html>
